@@ -1,3 +1,4 @@
-# easyNGS: Simplified and community-driven help messages for tools in bioinformatics
+# BioTLDR: Simplified and community-driven help messages for tools in bioinformatics
+
 
 
