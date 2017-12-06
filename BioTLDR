@@ -1,0 +1,28 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+import argparse
+import glog  ## used by insensitive_glob
+class BioTLDR:
+    def __init__(self):
+        """Initiate BioTLDR"""
+
+    def cmd(self, subcmd):
+        """Find the corresponding md file"""
+        print subcmd
+
+    def insensitive_glob(self, pattern):
+        def either(c):
+            return '[%s%s]'%(c.lower(),c.upper()) if c.isalpha() else c
+        return glob.glob(''.join(map(either,pattern)))
+
+
+if __name__ == '__main__':
+    BioTLDR = BioTLDR()
+    ## description - Text to display before the argument help (default: none)
+    parser=argparse.ArgumentParser(description='BioTLDR')
+    parser.add_argument('-c', '--command', help='Command', required=True) 
+    options = parser.parse_args()
+    dict_cmd = vars(options)
+    print dict_cmd
+    #print "Sub command is: " + dict_cmd['command']
+    
