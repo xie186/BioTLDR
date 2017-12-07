@@ -1,5 +1,5 @@
 # BioTLDR: Simplified and community-driven help messages for tools in bioinformatics
-
+ 
 > Still under development
 
 Have you ever encontered the situation below in the process of bioinformatics analysis?
@@ -8,7 +8,7 @@ Have you ever encontered the situation below in the process of bioinformatics an
 
 Lots of times, we need to go back to old projects to see how a command was used previously. Or we need to read the help message or the manual again, sometime dozens of pages, to figure out how we can run the command. This will consume a large amount of time.  
 
-BioTLDR is developped to solve this problem. You can just simply type `BioTDLR -c <command>`, you can get the simplified help messages. Here are two examples: 
+BioTLDR (TLDR is short for "too long; didn't read") is developped to solve this problem. You can just simply type `BioTDLR -c <command>`, you can get the simplified help messages. Here are two examples: 
 
 ![](images/bwa_example.png)
 
