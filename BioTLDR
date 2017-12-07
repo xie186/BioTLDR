@@ -1,19 +1,60 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import print_function  # To suppress the space character as well, you can either use
 import argparse
-import glog  ## used by insensitive_glob
+import os
+import glob  ## used by insensitive_glob
+from colorama import Fore, Back, Style, init
+init(autoreset=True)  
+
 class BioTLDR:
     def __init__(self):
         """Initiate BioTLDR"""
 
-    def cmd(self, subcmd):
+    def cmd(self, exe_folder, dict_arg):
         """Find the corresponding md file"""
-        print subcmd
+        db_folder = exe_folder + "/database/"
+        mds = self.insensitive_glob(db_folder, dict_arg['command'])
+        if len(mds) ==0:
+            self.cmd_not_found(dict_arg)
+            self.cmd_not_found_dim(dict_arg) 
+        elif len(mds) == 1: 
+            pass 
+        elif len(mds) > 1:
+            pass
 
-    def insensitive_glob(self, pattern):
-        def either(c):
+    def cmd_not_found(self, dict_arg):
+        """
+        """
+        print(Fore.BLUE + "Please check the command line name: ", end = "")
+        print(Fore.RED +  dict_arg['command'])
+
+        print(Fore.BLUE + "Or maybe the command ", end = "")
+        print(Fore.RED +  dict_arg['command'], end=" ")
+        print(Fore.BLUE + "does NOT existed in  ourdatabse. Please let us know if you use this very ofen. " + Style.RESET_ALL)            
+    def cmd_not_found_dim(self, dict_arg):
+        """
+        """
+        print(Style.BRIGHT + "Please check the command line name: ", end = "")
+        print(Style.BRIGHT +  dict_arg['command'])
+
+        print(Style.BRIGHT + "Or maybe the command ", end = "")
+        print(Style.BRIGHT +  dict_arg['command'], end=" ")
+        print(Style.BRIGHT + "does NOT existed in  ourdatabse. Please let us know if you use this very ofen. ")    
+ 
+    def insensitive_glob(self, directory, pattern):
+        """
+        Find the related 
+        Input: <Folder of the main code> <pattern>
+        Output: [md file names] 
+        """
+        def either(c): # return a regexp that is insensitive to cases. 
             return '[%s%s]'%(c.lower(),c.upper()) if c.isalpha() else c
-        return glob.glob(''.join(map(either,pattern)))
+
+        #print directory + ''.join(map(either,pattern))
+        return glob.glob(directory + ''.join(map(either,pattern)) + "*.md")
+
+    
 
 
 if __name__ == '__main__':
@@ -22,7 +63,12 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description='BioTLDR')
     parser.add_argument('-c', '--command', help='Command', required=True) 
     options = parser.parse_args()
-    dict_cmd = vars(options)
-    print dict_cmd
-    #print "Sub command is: " + dict_cmd['command']
+    dict_arg = vars(options)
+    print(dict_arg)
+
+    ## This is to get the path of the this file
+    exe_folder = os.path.abspath(os.path.dirname(__file__))
+
+    print("The folder of the path is: %s" % exe_folder)
+    BioTLDR.cmd(exe_folder, dict_arg)
     
