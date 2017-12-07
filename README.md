@@ -13,9 +13,23 @@ BioTLDR is developped to solve this proble:
 
 ## How to install
 
+```
+git clone https://github.com/xie186/BioTLDR.git
+cd BioTLDR
+pip install -r required_package.txt 
+```
+
 ## What if you tool is not included
 
+You can fork this repo and add the corresponding markdown files. 
+
+An example can be got [here](https://github.com/xie186/BioTLDR/edit/master/database/bwa.md)
+
+Or you can submit an issue [here](https://github.com/xie186/BioTLDR/issues). 
+
 ## Suggestions
+
+Please submit an issue [here](https://github.com/xie186/BioTLDR/issues) if you have any suggestions.
 
 ## TODO list
 
