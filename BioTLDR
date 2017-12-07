@@ -14,7 +14,7 @@ class BioTLDR:
 
     def cmd(self, exe_folder, dict_arg):
         """Find the corresponding md file"""
-        db_folder = exe_folder + "/database/"
+        db_folder = exe_folder + "/database/cmd/"
         mds = self.insensitive_glob(db_folder, dict_arg['command'])
         if len(mds) ==0:
             self.cmd_not_found(dict_arg)
@@ -22,8 +22,21 @@ class BioTLDR:
         elif len(mds) == 1: 
             self.cmd_found1(mds[0])
         elif len(mds) > 1:
-            pass
-   
+            index = self.get_cmd_index(mds)
+            self.cmd_found1(mds[index])
+
+    def get_cmd_index(self, mds):
+        """
+        Return: the index of markdown files. [0 - based]
+        """
+        print("We found more than one tools from our database:")
+        for i in range(len(mds)):
+            basename = os.path.basename(mds[i])
+            base_prefix = re.sub(r'.md$', "", basename)
+            print("    " + str(i+1) + ": " + base_prefix)
+        nb = input('Choose the tool by typing the number: ')
+        return nb - 1
+
     def cmd_found1(self, md):
         """
         Input: <markdown file>
