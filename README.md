@@ -6,7 +6,7 @@ Have you ever encontered the situation below in the process of bioinformatics an
 
 ![](images/TLDRbook.gif)
 
-Lots of times, we need to go back to privious old project to see what command line we used. Or we need to read the help message or sometimes the manual again to figure out how we can run the command. This will consume a large amount of time.  
+Lots of times, we need to go back to old projects to see how a command was used previously. Or we need to read the help message or the manual again, sometime dozens of pages, to figure out how we can run the command. This will consume a large amount of time.  
 
 BioTLDR is developped to solve this problem. You can just simply type `BioTDLR -c <command>`, you can get the simplified help messages. Here are two examples: 
 
@@ -29,7 +29,7 @@ You can fork this repo and add the corresponding markdown files.
 
 An example can be got [here](https://github.com/xie186/BioTLDR/edit/master/database/bwa.md)
 
-Or you can submit an issue [here](https://github.com/xie186/BioTLDR/issues). 
+Or you can submit an issue [here](https://github.com/xie186/BioTLDR/issues), then we can add the tools for you. 
 
 ## Suggestions
 
