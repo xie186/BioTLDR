@@ -8,6 +8,9 @@ BioTLDR is developped to solve this proble:
 
 ![](images/bwa_example.png)
 
+![](images/bowtie2_example.png)
+
+
 ## How to install
 
 ## What if you tool is not included
