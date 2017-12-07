@@ -30,12 +30,16 @@ class BioTLDR:
         """
         pattern = re.compile("`")
         print(Fore.CYAN + Back.BLACK + "\n")
+        last_line = ""
         with open(md, 'r') as f:
             for line in f:
                 if pattern.search(line):
                     print(Back.BLACK + Fore.CYAN +  line, end="")
                 else:
                     print(Back.BLACK + Fore.GREEN +  line, end="")
+                last_line = line
+        if not last_line.isspace(): ## This method returns true if there are only whitespace characters (newline included) in the string and there is at least one character, false otherwise.
+            print(Fore.CYAN + Back.BLACK + "\n")
 
     def cmd_not_found(self, dict_arg):
         """
