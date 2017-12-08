@@ -44,3 +44,5 @@ Please submit an issue [here](https://github.com/xie186/BioTLDR/issues) if you h
 3. Add function to customize the markdown files
 
 4. Add checklist.
+
+5. Deal with subcommand
