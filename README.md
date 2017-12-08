@@ -27,7 +27,7 @@ pip install -r required_package.txt
 
 You can fork this repo and add the corresponding markdown files. 
 
-An example can be got [here](https://github.com/xie186/BioTLDR/edit/master/database/bwa.md)
+An example can be got [here](https://github.com/xie186/BioTLDR/edit/master/database/cmd/bwa.md)
 
 Or you can submit an issue [here](https://github.com/xie186/BioTLDR/issues), then we can add the tools for you. 
 
