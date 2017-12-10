@@ -99,7 +99,15 @@ if __name__ == '__main__':
     BioTLDR = BioTLDR()
     ## description - Text to display before the argument help (default: none)
     parser=argparse.ArgumentParser(description='BioTLDR')
-    parser.add_argument('-c', '--command', help='Command', required=True) 
+
+    ## Add subcommand
+    subparsers = parser.add_subparsers(title='BioTLDR subcommand', 
+                                    dest = 'subcommand',
+                                    description='Subcommand',
+                                    help='XXX')
+
+    parser_cmd = subparsers.add_parser(SUBCMD_CMD, help='Search command line examples.')
+    parser_cmd.add_argument('-c', '--command', help='Command', required=True) 
     options = parser.parse_args()
     dict_arg = vars(options)
     #print(dict_arg)
